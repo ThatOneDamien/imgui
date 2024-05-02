@@ -1,9 +1,10 @@
 project "imgui"
 	kind "StaticLib"
 	language "C"
+    staticruntime "on"
 
-	targetdir ("bin/" .. outdir .. "/%{prj.name}")
-	objdir ("bin/int/" .. outdir .. "/%{prj.name}")
+	targetdir ("%{wks.location}/bin/" .. outdir .. "/%{prj.name}")
+	objdir ("%{wks.location}/bin/int/" .. outdir .. "/%{prj.name}")
 
 	files
 	{
@@ -29,10 +30,6 @@ project "imgui"
 	filter "system:windows"
 		systemversion "latest"
         cppdialect "C++17"
-		staticruntime "on"
-
-    filter {"system:windows", "configurations:Release"}
-        buildoptions "/MT"
 		
 	filter "configurations:Debug"
 		runtime "Debug"
