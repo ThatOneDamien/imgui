@@ -1,6 +1,7 @@
-project "imgui"
+project "ImGui"
 	kind "StaticLib"
-	language "C"
+	language "C++"
+    cppdialect "C++17"
     staticruntime "on"
 
 	targetdir ("%{wks.location}/bin/" .. outdir .. "/%{prj.name}")
@@ -28,8 +29,7 @@ project "imgui"
 		pic "on"
 
 	filter "system:windows"
-		systemversion "latest"
-        cppdialect "C++17"
+		systemversion "latest
 		
 	filter "configurations:Debug"
 		runtime "Debug"
