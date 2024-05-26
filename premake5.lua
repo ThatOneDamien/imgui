@@ -29,7 +29,7 @@ project "ImGui"
 		pic "on"
 
 	filter "system:windows"
-		systemversion "latest
+		systemversion "latest"
 		
 	filter "configurations:Debug"
 		runtime "Debug"
